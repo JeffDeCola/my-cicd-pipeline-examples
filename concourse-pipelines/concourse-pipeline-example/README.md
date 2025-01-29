@@ -9,3 +9,11 @@
   This should be your goto example to understand concourse._
 
 Table of Contents
+
+* tbd
+
+## ILLUSTRATION
+
+This is what the pipeline will look like,
+
+[!IMAGE](../../docs/pics/concourse-pipeline-example.svg)
