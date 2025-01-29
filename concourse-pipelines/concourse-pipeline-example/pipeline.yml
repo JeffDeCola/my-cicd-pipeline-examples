@@ -86,7 +86,7 @@ resources:
     icon: github
     source:
       uri: git@github.com:jeffdecola/my-cicd-pipeline-examples.git
-      branch: master
+      branch: main
       private_key: ((concourse_git_private_key))
 
   - name: my-cicd-pipeline-examples-push
@@ -94,7 +94,7 @@ resources:
     icon: github
     source:
       uri: git@github.com:jeffdecola/my-cicd-pipeline-examples.git
-      branch: master
+      branch: main
       private_key: ((concourse_git_private_key))
 
   - name: resource-slack-alert
