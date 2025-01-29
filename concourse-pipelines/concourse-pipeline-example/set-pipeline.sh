@@ -5,8 +5,8 @@ echo " "
 echo "Set pipeline on target jeffs-ci-target which is team jeffs-ci-team"
 fly --target jeffs-ci-target \
     set-pipeline \
-    --pipeline jeffs-concourse-example \
+    --pipeline concourse-pipeline-example \
     --config pipeline.yml \
-    --load-vars-from ../../../.concourse-secrets.yml \
+    --load-vars-from ../../../../.concourse-secrets.yml \
     --check-creds
 echo " "

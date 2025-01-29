@@ -14,13 +14,13 @@ date "+%a, %b %d, %Y - %I:%M%p" >> my-artifacts/todays-date.txt
 cat my-artifacts/todays-date.txt
 echo " "
 
-echo "COPY my-go-tests-private-update TO my-go-tests-private-push"
-cp -rT my-go-tests-private-update my-go-tests-private-push
+echo "COPY my-cicd-pipeline-examples-update TO my-cicd-pipeline-examples-push"
+cp -rT my-cicd-pipeline-examples-update my-cicd-pipeline-examples-push
 echo " "
 
-echo "Copy my-artifacts/message TO my-go-tests-private-push/."
+echo "Copy my-artifacts/message TO my-cicd-pipeline-examples-push/."
 echo "Will create if it doesn't exist"
-cat my-artifacts/todays-date.txt >> my-go-tests-private-push/todays-date.txt
+cat my-artifacts/todays-date.txt >> my-cicd-pipeline-examples-push/todays-date.txt
 echo " "
 
 # CONFIGURE GIT
@@ -33,8 +33,8 @@ git config --global user.name "Jeff DeCola (Concourse)"
 #git config --list
 echo " "
 
-echo "cd my-go-tests-private-push"
-cd my-go-tests-private-push || exit
+echo "cd my-cicd-pipeline-examples-push"
+cd my-cicd-pipeline-examples-push || exit
 ls -lat .
 echo " "
 

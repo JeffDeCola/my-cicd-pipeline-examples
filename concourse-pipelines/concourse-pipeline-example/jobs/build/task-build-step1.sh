@@ -14,12 +14,12 @@ date "+%a, %b %d, %Y - %I:%M%p" >> my-artifacts/todays-date.txt
 cat my-artifacts/todays-date.txt
 echo " "
 
-echo "COPY my-go-tests-private-resource TO my-go-tests-private-update"
-cp -rT my-go-tests-private-resource my-go-tests-private-update
+echo "COPY my-cicd-pipeline-examples-resource TO my-cicd-pipeline-examples-update"
+cp -rT my-cicd-pipeline-examples-resource my-cicd-pipeline-examples-update
 echo " "
 
-echo "cd my-go-tests-private-update"
-cd my-go-tests-private-update || exit
+echo "cd my-cicd-pipeline-examples-update"
+cd my-cicd-pipeline-examples-update || exit
 ls -lat .
 echo " "
 
