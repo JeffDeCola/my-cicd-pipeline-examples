@@ -9,7 +9,7 @@ ls -lat .
 echo " "
 
 echo "cd my-cicd-pipeline-examples-resource"
-cd my-cicd-pipeline-examples-resource || exit
+cd my-cicd-pipeline-examples-resource/concourse-pipelines/concourse-pipeline-example || exit
 ls -lat .
 echo " "
 
