@@ -8,8 +8,8 @@ pwd
 ls -lat .
 echo " "
 
-echo "cd my-go-tests-private-resource"
-cd my-go-tests-private-resource || exit
+echo "cd my-cicd-pipeline-examples-resource"
+cd my-cicd-pipeline-examples-resource || exit
 ls -lat .
 echo " "
 

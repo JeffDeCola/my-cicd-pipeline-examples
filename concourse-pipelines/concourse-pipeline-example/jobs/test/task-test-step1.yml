@@ -9,11 +9,11 @@ image_resource:
     tag: latest
 
 inputs:
-  - name:  my-go-tests-private-resource
+  - name:  my-cicd-pipeline-examples-resource
 
 # outputs:
-#  - name: my-go-tests-private-resource
+#  - name: my-cicd-pipeline-examples-resource
 
 run:
-  path: ./my-go-tests-private-resource/ci-concourse/jobs/test/task-test-step1.sh
+  path: ./my-cicd-pipeline-examples-resource/ci-concourse/jobs/test/task-test-step1.sh
   # args: [-debug]
