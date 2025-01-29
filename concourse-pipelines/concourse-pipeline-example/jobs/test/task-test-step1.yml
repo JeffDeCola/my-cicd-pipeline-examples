@@ -15,5 +15,5 @@ inputs:
 #  - name: my-cicd-pipeline-examples-resource
 
 run:
-  path: ./my-cicd-pipeline-examples-resource/ci-concourse/jobs/test/task-test-step1.sh
+  path: ./my-cicd-pipeline-examples-resource/concourse-pipelines/concourse-pipeline-example/jobs/test/task-test-step1.sh
   # args: [-debug]
