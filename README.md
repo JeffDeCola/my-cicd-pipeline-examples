@@ -13,9 +13,9 @@ Table of Contents
 Documentation and Reference
 
 * This repos
-  [github webpage](https://jeffdecola.github.io/my-cidi-pipeline-examples/)
+  [github webpage](https://jeffdecola.github.io/my-cicd-pipeline-examples/)
   _built with
-  [????????](https://github.com/JeffDeCola/my-cidi-pipeline-examples/blob/master/ci-README.md)_
+  [????????](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/master/ci-README.md)_
 
 ## CONCOURSE PIPELINES
 
