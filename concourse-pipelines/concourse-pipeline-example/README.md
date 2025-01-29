@@ -16,4 +16,4 @@ Table of Contents
 
 This is what the pipeline will look like,
 
-[!IMAGE](../../docs/pics/concourse-pipeline-example.svg)
+![IMAGE](../../docs/pics/concourse-pipeline-example.svg)
