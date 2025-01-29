@@ -16,5 +16,5 @@ outputs:
   - name: my-cicd-pipeline-examples-push
 
 run:
-  path: ./my-cicd-pipeline-examples-update/ci-concourse/jobs/build/task-build-step2.sh
+  path: ./my-cicd-pipeline-examples-update/concourse-pipelines/concourse-pipeline-example/jobs/build/task-build-step2.sh
   # args: [-debug]

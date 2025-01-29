@@ -18,9 +18,9 @@ echo "COPY my-cicd-pipeline-examples-update TO my-cicd-pipeline-examples-push"
 cp -rT my-cicd-pipeline-examples-update my-cicd-pipeline-examples-push
 echo " "
 
-echo "Copy my-artifacts/message TO my-cicd-pipeline-examples-push/."
+echo "Copy my-artifacts/message TO my-cicd-pipeline-examples-push/concourse-pipelines/concourse-pipeline-example/."
 echo "Will create if it doesn't exist"
-cat my-artifacts/todays-date.txt >> my-cicd-pipeline-examples-push/todays-date.txt
+cat my-artifacts/todays-date.txt >> my-cicd-pipeline-examples-push/concourse-pipelines/concourse-pipeline-example/todays-date.txt
 echo " "
 
 # CONFIGURE GIT
@@ -45,8 +45,8 @@ echo " "
 # GIT ADD AND COMMIT
 echo "git add ."
 git add .
-echo "git commit -m \"Added todays date from concourse ci\""
-git commit -m "Added todays date from concourse ci"
+echo "git commit -m \"Added todays date from concourse-pipeline-example\""
+git commit -m "Added todays date from concourse-pipeline-example"
 echo " "
 
 echo "END OF TASK BUILD STEP 2"
