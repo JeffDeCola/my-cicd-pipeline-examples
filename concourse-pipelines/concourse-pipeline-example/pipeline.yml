@@ -1,0 +1,104 @@
+jobs:
+
+#------------------------------------------------------------------------------------------
+- name: job-build
+  plan:
+
+  # GET REPO FROM GITHUB (MANUALLY)
+  - get: my-go-tests-private-resource
+    trigger: false
+
+  # STEP 1
+  - task: task-build-step1
+    file: my-go-tests-private-resource/ci-concourse/jobs/build/task-build-step1.yml
+
+  # STEP 2
+  - task: task-build-step2
+    file: my-go-tests-private-update/ci-concourse/jobs/build/task-build-step2.yml
+
+    # TASK SUCCESS
+    on_success:
+      do:
+        # PUSH NEW REPO TO GITHUB (add and commit done in shell script)
+        - put: my-go-tests-private-push
+          params:
+            repository: my-go-tests-private-push
+        # SEND SLACK ALERT
+        - put: resource-slack-alert
+          params:
+            channel: '#ci-concourse'
+            text: "From my-go-tests-private: PASSED job-build in concourse ci."
+
+    # TASK FAILURE
+    on_failure:
+      do:
+        # SEND SLACK ALERT
+        - put: resource-slack-alert
+          params:
+            channel: '#ci-concourse'
+            text: "From my-go-tests-private: FAILED job-build in concourse ci."
+
+#------------------------------------------------------------------------------------------
+- name: job-test
+  plan:
+
+  # WAIT FOR JOB-BUILD TO FINISH
+  - get: my-go-tests-private-resource
+    passed: [job-build]
+    trigger: true
+
+  # STEP 1
+  - task: task-test-step1
+    file: my-go-tests-private-resource/ci-concourse/jobs/test/task-test-step1.yml
+
+    # TASK SUCCESS
+    on_success:
+      do:
+        # SEND SLACK ALERT
+        - put: resource-slack-alert
+          params:
+            channel: '#ci-concourse'
+            text: "From my-go-tests-private: PASSED job-test in concourse ci."
+
+    # TASK FAILURE
+    on_failure:
+      do:
+        # SEND SLACK ALERT
+        - put: resource-slack-alert
+          params:
+            channel: '#ci-concourse'
+            text: "From my-go-tests-private: FAILED job-test in concourse ci."
+
+#------------------------------------------------------------------------------------------
+resource_types:
+
+  - name: slack-notification
+    type: docker-image
+    source:
+      repository: cfcommunity/slack-notification-resource
+      tag: latest
+
+#------------------------------------------------------------------------------------------
+resources:
+
+  - name: my-go-tests-private-resource
+    type: git
+    icon: github
+    source:
+      uri: git@github.com:jeffdecola/my-go-tests-private.git
+      branch: master
+      private_key: ((concourse_git_private_key))
+
+  - name: my-go-tests-private-push
+    type: git
+    icon: github
+    source:
+      uri: git@github.com:jeffdecola/my-go-tests-private.git
+      branch: master
+      private_key: ((concourse_git_private_key))
+
+  - name: resource-slack-alert
+    type: slack-notification
+    icon: slack
+    source:
+      url: ((slack_poo_concourse_webhook_url_token))

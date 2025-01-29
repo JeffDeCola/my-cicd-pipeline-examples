@@ -1,0 +1,20 @@
+# task-build-step1.yml
+
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: busybox
+    tag: latest
+
+inputs:
+  - name: my-go-tests-private-resource
+
+outputs:
+  - name: my-go-tests-private-update
+  - name: my-artifacts
+
+run:
+  path: ./my-go-tests-private-resource/ci-concourse/jobs/build/task-build-step1.sh
+  # args: [-debug]
