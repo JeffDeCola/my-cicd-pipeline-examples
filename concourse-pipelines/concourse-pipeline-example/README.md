@@ -18,6 +18,7 @@ Table of Contents
 ## OVERVIEW
 
 This pipeline outlines the feature of the concourse ci system.
+It will build a todays-date.txt file and then test if it is there.
 
 ![IMAGE](../../docs/pics/concourse-pipeline-example.svg)
 
