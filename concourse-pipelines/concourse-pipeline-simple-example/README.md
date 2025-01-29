@@ -6,3 +6,4 @@
   _A simple concourse pipeline using just a pipeline.yml file._
 
 Table of Contents
+
