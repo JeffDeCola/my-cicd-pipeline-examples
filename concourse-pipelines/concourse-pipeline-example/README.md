@@ -48,4 +48,3 @@ concourse_git_private_key: {my-key}
 
 ## JOB TEST
 
-[![DockerHub Badge](http://dockeri.co/image/jeffdecola/hello-go-deploy-marathon)](https://hub.docker.com/r/jeffdecola/hello-go-deploy-marathon/)
