@@ -10,10 +10,10 @@
 
 Table of Contents
 
-* [OVERVIEW](https://github.com/JeffDeCola/my-cicd-pipeline-examples/concourse-pipelines/concourse-pipeline-example#overview)
-* [PIPELINE](https://github.com/JeffDeCola/my-cicd-pipeline-examples/concourse-pipelines/concourse-pipeline-example#pipeline)
-* [JOB BUILD](https://github.com/JeffDeCola/my-cicd-pipeline-examples/concourse-pipelines/concourse-pipeline-example#job-build)
-* [JOB TEST](https://github.com/JeffDeCola/my-cicd-pipeline-examples/concourse-pipelines/concourse-pipeline-example#job-test)
+* [OVERVIEW](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/concourse-pipelines/concourse-pipeline-example#overview)
+* [PIPELINE](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/concourse-pipelines/concourse-pipeline-example#pipeline)
+* [JOB BUILD](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/concourse-pipelines/concourse-pipeline-example#job-build)
+* [JOB TEST](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/concourse-pipelines/concourse-pipeline-example#job-test)
 
 ## OVERVIEW
 
@@ -46,6 +46,75 @@ concourse_git_private_key: {my-key}
 
 ## JOB BUILD
 
+```yaml
+- name: job-build
+  plan:
+
+  # GET REPO FROM GITHUB (MANUALLY)
+  - get: my-cicd-pipeline-examples-resource
+    trigger: false
+
+  # STEP 1
+  - task: task-build-step1
+    file: my-cicd-pipeline-examples-resource/concourse-pipelines/concourse-pipeline-example/jobs/build/task-build-step1.yml
+
+  # STEP 2
+  - task: task-build-step2
+    file: my-cicd-pipeline-examples-update/concourse-pipelines/concourse-pipeline-example/jobs/build/task-build-step2.yml
+
+    # TASK SUCCESS
+    on_success:
+      do:
+        # PUSH NEW REPO TO GITHUB (add and commit done in shell script)
+        - put: my-cicd-pipeline-examples-push
+          params:
+            repository: my-cicd-pipeline-examples-push
+        # SEND SLACK ALERT
+        - put: resource-slack-alert
+          params:
+            channel: '#ci-concourse'
+            text: "From my-cicd-pipeline-examples: PASSED job-build in concourse ci."
+
+    # TASK FAILURE
+    on_failure:
+      do:
+        # SEND SLACK ALERT
+        - put: resource-slack-alert
+          params:
+            channel: '#ci-concourse'
+            text: "From my-cicd-pipeline-examples: FAILED job-build in concourse ci."
+```
 
 ## JOB TEST
 
+```yaml
+- name: job-test
+  plan:
+
+  # WAIT FOR JOB-BUILD TO FINISH
+  - get: my-cicd-pipeline-examples-resource
+    passed: [job-build]
+    trigger: true
+
+  # STEP 1
+  - task: task-test-step1
+    file: my-cicd-pipeline-examples-resource/concourse-pipelines/concourse-pipeline-example/jobs/test/task-test-step1.yml
+
+    # TASK SUCCESS
+    on_success:
+      do:
+        # SEND SLACK ALERT
+        - put: resource-slack-alert
+          params:
+            channel: '#ci-concourse'
+            text: "From my-cicd-pipeline-examples: PASSED job-test in concourse ci."
+
+    # TASK FAILURE
+    on_failure:
+      do:
+        # SEND SLACK ALERT
+        - put: resource-slack-alert
+          params:
+            channel: '#ci-concourse'
+            text: "From my-cicd-pipeline-examples: FAILED job-test in concourse ci."
+```
