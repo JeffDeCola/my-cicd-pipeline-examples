@@ -12,18 +12,18 @@ Table of Contents
 
 ## CONCOURSE PIPELINES
 
-* [concourse-pipeline-simple-example](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/concourse-pieplines/concourse-pipeline-simple-example)
+* [concourse-pipeline-simple-example](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/concourse-pipelines/concourse-pipeline-simple-example)
 
   _A simple concourse pipeline using just a pipeline.yml file._
 
-* [concourse-pipeline-example](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/concourse-pieplines/concourse-pipeline-example)
+* [concourse-pipeline-example](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/concourse-pipelines/concourse-pipeline-example)
 
   _A concourse pipeline example that show task steps and how
   concourse handles artifacts. It uses a github repo and separates
   the task steps and script files.
   This should be your goto example to understand concourse._
 
-* [concourse-pipeline-test-build-push-dockerhub](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/concourse-pieplines/concourse-pipeline-test-build-push-dockerhub)
+* [concourse-pipeline-test-build-push-dockerhub](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/concourse-pipelines/concourse-pipeline-test-build-push-dockerhub)
 
   _A concourse pipeline that tests, builds and pushes a docker image to dockerhub._
 
