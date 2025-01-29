@@ -7,26 +7,39 @@ _Using CI/CD tools to create pipelines._
 
 Table of Contents
 
-* [CONCOURSE](https://github.com/JeffDeCola/my-cicd-pipeline-examples#concourse)
-* [GITLAB CI](https://gihub.com/JeffDeCola/my-cicd-pipeline-examples#gitlab-ci)
+* [CONCOURSE PIPELINES](https://github.com/JeffDeCola/my-cicd-pipeline-examples#concourse-pipelines)
+* [GITLAB PIPELINES](https://github.com/JeffDeCola/my-cicd-pipeline-examples#gitlab-pipelines)
 
 ## CONCOURSE PIPELINES
 
-* [concourse-pipeline-extremely-simple-example](https://github.com/JeffDeCola/
+* [concourse-pipeline-simple-example](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/concourse-pipeline-simple-example)
 
-  _An extremely simple concourse pipeline using just a pipeline.yml file._
+  _A simple concourse pipeline using just a pipeline.yml file._
 
-* [concourse-pipeline-simple-example](https://github.com/JeffDeCola/
+* [concourse-pipeline-example](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/concourse-pipeline-example)
 
-  _A concourse pipeline example that pulls a repo from github, updates a
-  and pushes it back to github. The purpose is to show task steps and artifacts._
+  _A concourse pipeline example that show task steps and how
+  concourse handles artifacts. It uses a github repo and separates
+  the task steps and script files.
+  This should be your goto example to understand concourse._
 
-* [concourse-pipeline-test-build-push-dockerhub](https://github.com/JeffDeCola/
+* [concourse-pipeline-test-build-push-dockerhub](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/concourse-pipeline-test-build-push-dockerhub)
 
   _A concourse pipeline that tests, builds and pushes a docker image to dockerhub._
 
-## GITLAB CI PIPELINES
+## GITLAB PIPELINES
 
-* [gitlab-ci-pipeline-extremely-simple-example](
+* [gitlab-pipeline-simple-example](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/gitlab-pipeline-simple-example)
 
-  _An extremely simple gitlab-ci pipeline using just a .gitlab-ci.yml file._
+  _A simple gitlab pipeline using just a .gitlab.yml file._
+
+* [gitlab-pipeline-example](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/gitlab-pipeline-example)
+
+  _A gitlab pipeline example that show task steps and how
+  gitlab handles artifacts. It uses a github repo and separates
+  the task steps and script files.
+  This should be your goto example to understand gitlab._
+
+* [gitlab-pipeline-test-build-push-dockerhub](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/gitlab-pipeline-test-build-push-dockerhub)
+
+  _A gitlab pipeline that tests, builds and pushes a docker image to dockerhub._
