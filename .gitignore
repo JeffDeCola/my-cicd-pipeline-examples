@@ -1,0 +1,10 @@
+# repo-my-cicd-pipeline-examples-.gitignore
+
+# CONCOURSE SECRETS
+.concourse-secrets.yml
+
+# macOS
+.DS_Store
+
+# WINDOWS
+*.jpg:Zone.Identifier
