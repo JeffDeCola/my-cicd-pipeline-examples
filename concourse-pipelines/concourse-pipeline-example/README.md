@@ -17,7 +17,7 @@ Table of Contents
 
 ## OVERVIEW
 
-This pipeline outlines the feature of the concourse ci/cd system.
+This pipeline will outlines the main features of the concourse ci/cd system.
 It will build a todays-date.txt file and then test if its there.
 
 ![IMAGE](../../docs/pics/concourse-pipeline-example.svg)
@@ -44,13 +44,15 @@ dockerhub_token: {my-token}
 concourse_git_private_key: {my-key}
 ```
 
+![IMAGE](../../docs/pics/concourse-pipeline-example-pipeline.jpg)
+
 ## JOB BUILD
 
 Job build has 2 task steps. It is kicked off manually.
 The job will first `get` the repo from github and
 rename it to my-cicd-pipeline-examples-resource.
 
-* [tasks-build-step1.yml](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/build/task-build-step1.yml)
+* [task-build-step1.yml](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/build/task-build-step1.yml)
   * **DOCKER IMAGE:** alpine/git
   * **INPUTS:** my-cicd-pipeline-examples-resource
   * **OUTPUTS:** my-artifacts, my-cicd-pipeline-examples-update
@@ -59,7 +61,7 @@ rename it to my-cicd-pipeline-examples-resource.
     * Create a todays-date.txt file and place in my-artifacts
     * Copy the my-cicd-pipeline-examples-resource to my-cicd-pipeline-examples-update
 
-* [tasks-build-step2.yml](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/build/task-build-step2.yml)
+* [task-build-step2.yml](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/build/task-build-step2.yml)
   * **DOCKER IMAGE:** busybox
   * **INPUT:** my-artifacts, my-cicd-pipeline-examples-update
   * **OUTPUT:** my-cicd-pipeline-examples-push
@@ -117,12 +119,12 @@ the concourse resource resource-slack-alert.
 Job test has 1 task step. The job will first `get` the repo from github and
 rename it to my-cicd-pipeline-examples-resource.
 
-* [tasks-test-step1.yml](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/test/task-test-step1.yml)
+* [task-test-step1.yml](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/test/task-test-step1.yml)
   * **DOCKER IMAGE:** busybox
   * **INPUTS:** my-cicd-pipeline-examples-resource
   * **OUTPUTS:** N/A
   * **RUN:** [task-test-step1.sh](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/test/task-test-step1.sh)
-    * Check if todays-date.txt file exists.
+    * Check if todays-date.txt file exists
 
 The job will then `put` a slack alert using the concourse resource
 resource-slack-alert.

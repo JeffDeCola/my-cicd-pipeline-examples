@@ -1,0 +1,36 @@
+jobs:
+
+#------------------------------------------------------------------------------------------
+- name: job-simple-example
+  plan:
+
+  # STEP 1
+  - task: task-simple-example-step1
+    config:
+      platform: linux
+      image_resource:
+        type: registry-image
+        source:
+          repository: busybox
+      # inputs:
+      #  - name:
+      outputs:
+        - name: my-artifacts
+      run:
+        # This is a neat way of embedding a script into a task
+        path: sh
+        args:
+        - -cx
+        - |
+          echo "WELCOME TO TASK SIMPLE EXAMPLE STEP 1"
+          echo " "
+
+          pwd
+          ls -lat .
+          echo " "
+
+          echo "CREATE DATE AND TIME FILE my-artifacts/todays-date.txt"
+          printf "Hello from Task Simple Example Step 1\n" >> my-artifacts/todays-date.txt
+          date "+%a, %b %d, %Y - %I:%M%p" >> my-artifacts/todays-date.txt
+          cat my-artifacts/todays-date.txt
+          echo " "
