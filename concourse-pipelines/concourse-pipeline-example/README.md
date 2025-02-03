@@ -48,7 +48,7 @@ concourse_git_private_key: {my-key}
 
 ## JOB BUILD
 
-Job build has 2 task steps. It is kicked off manually.
+Job build has 2 task steps. Its kicked off manually.
 The job will first `get` the repo from github and
 rename it to my-cicd-pipeline-examples-resource.
 
