@@ -41,7 +41,7 @@ concourse_git_private_key: {my-key}
 
 ## JOB SIMPLE EXAMPLE
 
-Job build has 1 task step. It is kicked off manually.
+Job simple example has 1 task step. Its kicked off manually.
 
 * Task Simple Example Step 1
   * **DOCKER IMAGE:** busybox
