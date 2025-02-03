@@ -46,29 +46,28 @@ concourse_git_private_key: {my-key}
 
 ## JOB BUILD
 
-Job build has 2 task steps. The job will first `get` the repo from github and
+Job build has 2 task steps. It is kicked off manually.
+The job will first `get` the repo from github and
 rename it to my-cicd-pipeline-examples-resource.
 
 * [tasks-build-step1.yml](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/build/task-build-step1.yml)
-  * INPUTS: my-cicd-pipeline-examples-resource
-  * OUTPUTS: my-artifacts, my-cicd-pipeline-examples-update
-  * DOCKER IMAGE: alpine/git
-
-* [task-build-step1.sh](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/build/task-build-step1.sh)
-  * Create a new directory my-artifacts
-  * Create a todays-date.txt file and place in my-artifacts
-  * Copy the my-cicd-pipeline-examples-resource to my-cicd-pipeline-examples-update
+  * **DOCKER IMAGE:** alpine/git
+  * **INPUTS:** my-cicd-pipeline-examples-resource
+  * **OUTPUTS:** my-artifacts, my-cicd-pipeline-examples-update
+  * **RUN:** [task-build-step1.sh](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/build/task-build-step1.sh)
+    * Create a new directory my-artifacts
+    * Create a todays-date.txt file and place in my-artifacts
+    * Copy the my-cicd-pipeline-examples-resource to my-cicd-pipeline-examples-update
 
 * [tasks-build-step2.yml](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/build/task-build-step2.yml)
-  * INPUT: my-artifacts, my-cicd-pipeline-examples-update
-  * OUTPUT: my-cicd-pipeline-examples-push
-  * DOCKER IMAGE: busybox
-
-* [task-build-step2.sh](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/build/task-build-step2.sh)
-  * Add to todays-date.txt file in my-artifacts
-  * Copy my-cicd-pipeline-examples-update to my-cicd-pipeline-examples-push
-  * Copy the todays-date.txt file to my-cicd-pipeline-examples-push
-  * git add and git commit to the local repo.
+  * **DOCKER IMAGE:** busybox
+  * **INPUT:** my-artifacts, my-cicd-pipeline-examples-update
+  * **OUTPUT:** my-cicd-pipeline-examples-push
+  * **RUN:** [task-build-step2.sh](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/build/task-build-step2.sh)
+    * Add to todays-date.txt file in my-artifacts
+    * Copy my-cicd-pipeline-examples-update to my-cicd-pipeline-examples-push
+    * Copy the todays-date.txt file to my-cicd-pipeline-examples-push
+    * git add and git commit to the local repo
 
 The job will then `put` the repo to github using the concourse resource
 my-cicd-pipeline-examples-push and `put` a slack alert using
@@ -119,12 +118,11 @@ Job test has 1 task step. The job will first `get` the repo from github and
 rename it to my-cicd-pipeline-examples-resource.
 
 * [tasks-test-step1.yml](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/test/task-test-step1.yml)
-  * INPUTS: my-cicd-pipeline-examples-resource
-  * OUTPUTS: N/A
-  * DOCKER IMAGE: busybox
-
-* [task-test-step1.sh](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/test/task-test-step1.sh)
-  * Check if todays-date.txt file exists.
+  * **DOCKER IMAGE:** busybox
+  * **INPUTS:** my-cicd-pipeline-examples-resource
+  * **OUTPUTS:** N/A
+  * **RUN:** [task-test-step1.sh](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/main/concourse-pipelines/concourse-pipeline-example/jobs/test/task-test-step1.sh)
+    * Check if todays-date.txt file exists.
 
 The job will then `put` a slack alert using the concourse resource
 resource-slack-alert.
