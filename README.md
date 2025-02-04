@@ -12,6 +12,8 @@ Table of Contents
 
 Documentation and Reference
 
+* My [concourse cheat sheet](https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/operations/continuous-integration-continuous-deployment/concourse-cheat-sheet)
+* My [gitlab cheat sheet](https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/operations/continuous-integration-continuous-deployment/gitlab-cheat-sheet)
 * This repos
   [github webpage](https://jeffdecola.github.io/my-cicd-pipeline-examples/)
   _built with
