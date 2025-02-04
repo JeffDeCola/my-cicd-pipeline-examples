@@ -22,4 +22,3 @@ This pipeline is very basic.
 To add the pipeline to gitlab I used,
 
 ## JOB SIMPLE EXAMPLE
-
