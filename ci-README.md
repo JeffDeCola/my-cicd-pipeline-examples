@@ -1,12 +1,14 @@
-# GITLAB PIPELINE TEST BUILD PUSH DOCKERHUB
+# TBD CONTINUOUS INTEGRATION
 
 [![jeffdecola.com](https://img.shields.io/badge/website-jeffdecola.com-blue)](https://jeffdecola.com)
 [![MIT License](https://img.shields.io/:license-mit-blue.svg)](https://jeffdecola.mit-license.org)
 
-```text
-*** UNDER CONSTRUCTION - CHECK BACK SOON ***
-```
+AUTOMATES
 
-  _A gitlab pipeline that tests, builds and pushes a docker image to dockerhub._
+* Use README for
+  [GitHub Webpage](https://jeffdecola.github.io/my-cicd-pipeline-examples/)
+* Alert me of the progress via repo status and slack
 
-Table of Contents
+## PIPELINE
+
+_tbd._

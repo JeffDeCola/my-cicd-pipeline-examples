@@ -1,7 +1,7 @@
 # MY-CICD-PIPELINE-EXAMPLES
 
-[![MIT License](https://img.shields.io/:license-mit-blue.svg)](https://jeffdecola.mit-license.org)
 [![jeffdecola.com](https://img.shields.io/badge/website-jeffdecola.com-blue)](https://jeffdecola.com)
+[![MIT License](https://img.shields.io/:license-mit-blue.svg)](https://jeffdecola.mit-license.org)
 
 _Using CI/CD tools to create pipelines._
 
@@ -12,12 +12,12 @@ Table of Contents
 
 Documentation and Reference
 
-* My [concourse cheat sheet](https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/operations/continuous-integration-continuous-deployment/concourse-cheat-sheet)
-* My [gitlab cheat sheet](https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/operations/continuous-integration-continuous-deployment/gitlab-cheat-sheet)
+* [concourse](https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/operations/continuous-integration-continuous-deployment/concourse-cheat-sheet)
+* [gitlab](https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/operations/continuous-integration-continuous-deployment/gitlab-cheat-sheet)
 * This repos
   [github webpage](https://jeffdecola.github.io/my-cicd-pipeline-examples/)
   _built with
-  [????????](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/master/ci-README.md)_
+  [tbd](https://github.com/JeffDeCola/my-cicd-pipeline-examples/blob/master/ci-README.md)_
 
 ## CONCOURSE PIPELINES
 
