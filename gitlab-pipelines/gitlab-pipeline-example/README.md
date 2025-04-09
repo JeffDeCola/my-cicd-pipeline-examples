@@ -15,6 +15,10 @@ Table of Contents
 * [JOB BUILD](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/gitlab-pipelines/gitlab-pipeline-example#job-build)
 * [JOB TEST](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/gitlab-pipelines/gitlab-pipeline-example#job-test)
 
+Documentation and Reference
+
+* [gitlab](https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/operations/continuous-integration-continuous-deployment/gitlab-cheat-sheet)
+
 ## OVERVIEW
 
 This pipeline will outlines the main features of the gitlab ci/cd system.

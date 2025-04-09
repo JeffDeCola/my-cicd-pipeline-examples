@@ -15,6 +15,10 @@ Table of Contents
 * [PIPELINE](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/gitlab-pipelines/gitlab-pipeline-simple-example#pipeline)
 * [JOB SIMPLE EXAMPLE](https://github.com/JeffDeCola/my-cicd-pipeline-examples/tree/master/gitlab-pipelines/gitlab-pipeline-simple-example#job-simple-example)
 
+Documentation and Reference
+
+* [gitlab](https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/operations/continuous-integration-continuous-deployment/gitlab-cheat-sheet)
+
 ## OVERVIEW
 
 This pipeline is very basic.
